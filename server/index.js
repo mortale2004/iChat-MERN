@@ -10,7 +10,7 @@ const path = require("path");
 
 let users = [];
 
-app.use(express.static(path.resolve(__dirname, "../build")));
+app.use(express.static(path.resolve(__dirname, "../build/")));
 app.use(cors());
 
 io.on("connection", (client) => {
