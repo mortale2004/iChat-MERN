@@ -29,7 +29,7 @@ io.on("connection", (client) => {
 
     client.on("send", data => {
         const user = users.find(user=> user.id===client.id);
-        client.broadcast.emit("receive", { message: data.message, id:client.id, name:user.name});
+        client.broadcast.emit("receive", { message: data.message, id:client.id, name:user?.name});
     })
 
     client.on("disconnect", () => {
