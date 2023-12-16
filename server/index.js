@@ -10,12 +10,10 @@ const path = require("path");
 
 let users = [];
 
+app.use(express.static(path.resolve(__dirname, "../build")));
 app.use(cors());
-app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 io.on("connection", (client) => {
-    
-    
     console.log("current users = ", users.length);
     
     client.on("new-user-joined", (data) => {
